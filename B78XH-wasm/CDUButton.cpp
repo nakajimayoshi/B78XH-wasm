@@ -24,18 +24,25 @@ void CDUButton::draw() {
 		drawTitle();
 		drawButtonBorders();
 	}
+
 }
 
-void CDUButton::drawBackground() const {
-	
-	nvgFillColor(this->context, Tools::Colors::cduButtonGray);
-	nvgBeginPath(this->context);
-	{
-		nvgRect(this->context, this->x, this->y, this->width, this->height);
-	}
-	nvgClosePath(this->context);
-	nvgFill(this->context);
+void CDUButton::setBackgroundColor(NVGcolor color)
+{
+	this->backgroundColor = color;
 }
+
+
+void CDUButton::drawBackground() const {
+
+		nvgFillColor(this->context, this->backgroundColor);
+		nvgBeginPath(this->context);
+		{
+			nvgRect(this->context, this->x, this->y, this->width, this->height);
+		}
+		nvgClosePath(this->context);
+		nvgFill(this->context);
+	}
 
 bool CDUButton::isInFocus() {
 	this->calculateBounds();
@@ -50,8 +57,7 @@ bool CDUButton::isInFocus() {
 void CDUButton::shouldTriggerEvent() {
 	this->calculateBounds();
 	if(this->mouseClickResolver.getX() >= this->bounds[0] && this->mouseClickResolver.getX() <= this->bounds[1] &&
-		this->mouseClickResolver.getY() >= this->bounds[2] && this->mouseClickResolver.getY() <= this->bounds[
-			3]) {
+		this->mouseClickResolver.getY() >= this->bounds[2] && this->mouseClickResolver.getY() <= this->bounds[3]) {
 		if(this->event) {
 			this->mouseClickResolver.reset();
 			this->event();
@@ -71,12 +77,12 @@ void CDUButton::calculateBounds() {
 	this->bounds[3] = this->y + this->height;
 }
 
-void CDUButton::drawTitle() {
+void CDUButton::drawTitle(NVGcolor color) {
 	if(this->title != nullptr && this->title2 == nullptr) {
-		const double textX = this->x + (this->width / 2);
+		const double textX = (this->titleAlign == NVG_ALIGN_CENTER ? this->x + (this->width / 2) : this->x + 10);
 		const double textY = this->y + (this->height / 2);
-		nvgTextAlign(this->context, NVG_ALIGN_CENTER | NVG_ALIGN_MIDDLE);
-		nvgFillColor(this->context, Tools::Colors::white);
+		nvgTextAlign(this->context, this->titleAlign | NVG_ALIGN_MIDDLE);
+		nvgFillColor(this->context, color);
 		nvgBeginPath(this->context);
 		{
 			nvgText(this->context, textX, textY, this->title, nullptr);
@@ -84,11 +90,21 @@ void CDUButton::drawTitle() {
 		nvgClosePath(this->context);
 		nvgFill(this->context);
 	} else if(this->title != nullptr && this->title2 != nullptr) {
-		const double textX = this->x + (this->width / 2);
-		const double textY = this->y + (this->height / 2) - 7;
-		const double text2Y = this->y + (this->height / 2) + 7;
-		nvgTextAlign(this->context, NVG_ALIGN_CENTER | NVG_ALIGN_MIDDLE);
-		nvgFillColor(this->context, Tools::Colors::white);
+		float titleBounds[4];
+		nvgTextBounds(context, 0, 0, this->title, nullptr, titleBounds);
+
+		titleBounds[0];      // minX
+		titleBounds[1];      // minY
+		titleBounds[2];      // maxX
+		titleBounds[3];      // maxY
+
+		const double textY = this->y + (this->height / 2) - ((titleBounds[3] - titleBounds[1]) / 2) + 2;
+
+		const double textX = (this->titleAlign == NVG_ALIGN_CENTER ? this->x + (this->width / 2) : this->x + 10);
+		// const double textY = this->y + (this->height / 2) - 7;
+		const double text2Y = this->y + (this->height / 2) + ((titleBounds[3] - titleBounds[1]) / 2) - 2;
+		nvgTextAlign(this->context, this->titleAlign | NVG_ALIGN_MIDDLE);
+		nvgFillColor(this->context, color);
 		nvgBeginPath(this->context);
 		{
 			nvgText(this->context, textX, textY, this->title, nullptr);

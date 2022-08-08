@@ -1,4 +1,4 @@
-﻿//    B78XH-wasm
+//    B78XH-wasm
 //    Copyright (C) 2022  Heavy Division
 //
 //    This program is free software: you can redistribute it and/or modify
@@ -16,42 +16,28 @@
 
 
 #pragma once
-#include <MSFS/MSFS_Render.h>
-#include <MSFS/Legacy/gauges.h>
-#include "fmt/core.h"
-#include "MSFS/Render/nanovg.h"
-#include "GaugesInvalidateFlags.h"
+#include "CDUButton.h"
 
-class BaseGauge {
-	public:
-		virtual ~BaseGauge() = default;
-		virtual bool preInstall() = 0;
-		virtual bool postInstall(FsContext context) = 0;
-		virtual bool preDraw(sGaugeDrawData* data) = 0;
-		virtual bool preDraw(FsContext context, sGaugeDrawData* data) {
-			return true;
-		};
-		virtual bool preKill() = 0;
-};
-
-class Test {
-public: 
-	Test(double arg1, double arg2) : p1(arg1), p2(arg1 + arg2 + 25) {
-		this->p2 = arg1 + arg2 + 25;
-	}
-
-	private: 
-		double p1;
-		double p2;
-
-};
-
-class TestX : public Test
-{
+class MFDSysSelectKeyButton : public CDUButton {
 public:
-	TestX(double arg1, double arg2);
-private:
-	double x;
-	double y;
-};
+	MFDSysSelectKeyButton(NVGcontext*& context,
+		CDUMouseMoveResolver& mouseMoveResolver,
+		CDUMouseClickResolver& mouseClickResolver,
+		double x,
+		double y,
+		bool rightSide = false
+	);
 
+	void draw() override;
+
+protected:
+	void calculateBounds() override;
+
+private:
+	/*
+	 * Rename rightSide property
+	 */
+	bool rightSide = false;
+	void drawBorder();
+	void drawPointers();
+};

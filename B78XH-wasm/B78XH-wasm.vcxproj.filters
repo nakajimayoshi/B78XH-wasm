@@ -164,6 +164,24 @@
     <ClCompile Include="CDUPage.cpp">
       <Filter>Source Files\Gauges\CDU\Pages</Filter>
     </ClCompile>
+    <ClCompile Include="MFDCommGaugeCallback.cpp">
+      <Filter>Source Files\MSFS Callbacks</Filter>
+    </ClCompile>
+    <ClCompile Include="MFDCommGauge.cpp">
+      <Filter>Source Files\Gauges</Filter>
+    </ClCompile>
+    <ClCompile Include="MFDSysSelectKeyButton.cpp">
+      <Filter>Source Files\Gauges\CDU\Prototypes\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="MFDMenuButton.cpp">
+      <Filter>Source Files\Gauges\CDU\Prototypes\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="MFDCommBasePage.cpp">
+      <Filter>Source Files\Gauges\MFD</Filter>
+    </ClCompile>
+    <ClCompile Include="MFDCommATC.cpp">
+      <Filter>Source Files\Gauges\MFD\Pages\Comm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSFS_SDK)WASM\include\MSFS\render\nanovg.h" />
@@ -358,6 +376,21 @@
     <ClInclude Include="CDUCenterTitleLine.h">
       <Filter>Source Files\Gauges\CDU\Renderers\Enums</Filter>
     </ClInclude>
+    <ClInclude Include="MFDCommGauge.h">
+      <Filter>Source Files\Gauges</Filter>
+    </ClInclude>
+    <ClInclude Include="MFDMenuButton.h">
+      <Filter>Source Files\Gauges\CDU\Prototypes\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="MFDSysSelectKeyButton.h">
+      <Filter>Source Files\Gauges\CDU\Prototypes\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="MFDCommBasePage.h">
+      <Filter>Source Files\Gauges\MFD</Filter>
+    </ClInclude>
+    <ClInclude Include="MFDCommAtc.h">
+      <Filter>Source Files\Gauges\MFD\Pages\Comm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -431,6 +464,15 @@
     </Filter>
     <Filter Include="Source Files\Abstract">
       <UniqueIdentifier>{d1823fc9-8db6-4f89-b48d-1a2dd5f64e69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gauges\MFD">
+      <UniqueIdentifier>{acd1bf49-f79c-468b-9e71-b12fdcae72a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gauges\MFD\Pages">
+      <UniqueIdentifier>{af538599-31a6-4809-9dfa-14d7fc4e93ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gauges\MFD\Pages\Comm">
+      <UniqueIdentifier>{af194560-e5bf-46db-92f1-eda3fce4a880}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

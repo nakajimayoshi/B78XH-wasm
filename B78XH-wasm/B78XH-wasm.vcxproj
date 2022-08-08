@@ -51,7 +51,7 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.wasm</TargetExt>
     <IncludePath>$(MSFS_IncludePath)</IncludePath>
-    <OutDir>..\..\..\..\WebstormProjects\B78XH-su9-stable\SimObjects\Airplanes\Asobo_B787_10\panel\</OutDir>
+    <OutDir>..\..\..\..\Desktop\B78Xheavy\B78XH\SimObjects\Airplanes\Asobo_B787_10\panel</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|MSFS'">
     <LinkIncremental>false</LinkIncremental>
@@ -136,8 +136,13 @@
     <ClCompile Include="CDUSelectKeyButton.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="MCPVSpeedGauge.cpp" />
+    <ClCompile Include="MFDCommATC.cpp" />
+    <ClCompile Include="MFDCommGauge.cpp" />
+    <ClCompile Include="MFDCommGaugeCallback.cpp" />
     <ClCompile Include="MFDCduGauge.cpp" />
     <ClCompile Include="MFDCduGaugeCallback.cpp" />
+    <ClCompile Include="MFDMenuButton.cpp" />
+    <ClCompile Include="MFDSysSelectKeyButton.cpp" />
     <ClCompile Include="PFDAirspeedIndicator.cpp" />
     <ClCompile Include="PFDAltitudeIndicator.cpp" />
     <ClCompile Include="PFDAuxGauge.cpp" />
@@ -158,6 +163,7 @@
     <ClCompile Include="SimulationVariables.cpp" />
     <ClCompile Include="SimConnectConnector.cpp" />
     <ClCompile Include="PEDESTALTuningControlPanelGauge.cpp" />
+    <ClCompile Include="MFDCommBasePage.cpp" />
     <ClCompile Include="TuningControlPanelALTNNAVPage.cpp" />
     <ClCompile Include="TuningControlPanelGPWSPage.cpp" />
     <ClCompile Include="TuningControlPanelSATCOMPage.cpp" />
@@ -205,7 +211,12 @@
     <ClInclude Include="GaugesInvalidateFlags.h" />
     <ClInclude Include="LVars.h" />
     <ClInclude Include="CDUMainKeyButton.h" />
+    <ClInclude Include="MFDCommAtc.h" />
+    <ClInclude Include="MFDCommBasePage.h" />
+    <ClInclude Include="MFDCommGauge.h" />
     <ClInclude Include="MFDCduGauge.h" />
+    <ClInclude Include="MFDMenuButton.h" />
+    <ClInclude Include="MFDSysSelectKeyButton.h" />
     <ClInclude Include="MouseResolver.h" />
     <ClInclude Include="PFDAirspeedIndicator.h" />
     <ClInclude Include="PFDAltitudeIndicator.h" />

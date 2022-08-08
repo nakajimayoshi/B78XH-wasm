@@ -14,43 +14,35 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#include "MFDSysSelectKeyButton.h"
 
-#include "CDUSelectKeyButton.h"
-
-void CDUSelectKeyButton::draw() {
+void MFDSysSelectKeyButton::draw() {
 	if (this->context != nullptr) {
-		if(this->event) {
+		if (this->event) {
 			CDUButton::draw();
-		} else {
+		}
+		else {
 			drawBackBorders(Tools::Colors::cyan);
-			
 		}
 		this->drawPointers();
 	}
 	this->shouldTriggerEvent();
-	if(this->isInFocus()) {
-		CDUSelectKeyButton::drawBorder();
+	if (this->isInFocus()) {
+		MFDSysSelectKeyButton::drawBorder();
 	}
 }
 
-void CDUSelectKeyButton::calculateBounds() {
-	if(this->rightSide) {
-		this->bounds[0] = this->x - 200;
-		this->bounds[1] = this->x + this->width;
-		this->bounds[2] = this->y;
-		this->bounds[3] = this->y + this->height;
-	} else {
+void MFDSysSelectKeyButton::calculateBounds() {
 		this->bounds[0] = this->x;
 		this->bounds[1] = this->x + this->width + 200;
 		this->bounds[2] = this->y;
 		this->bounds[3] = this->y + this->height;
-	}
+
 }
 
-void CDUSelectKeyButton::drawBorder() {
+void MFDSysSelectKeyButton::drawBorder() {
 	nvgStrokeColor(context, Tools::Colors::magenta);
 	nvgStrokeWidth(this->context, 5.0f);
-	if(this->rightSide) {
 		nvgBeginPath(this->context);
 		{
 			nvgMoveTo(this->context, this->x + this->width, this->y);
@@ -59,7 +51,6 @@ void CDUSelectKeyButton::drawBorder() {
 			nvgLineTo(this->context, this->x + this->width, this->y + this->height);
 		}
 		nvgClosePath(this->context);
-	} else {
 		nvgBeginPath(this->context);
 		{
 			nvgMoveTo(this->context, this->x, this->y);
@@ -68,27 +59,23 @@ void CDUSelectKeyButton::drawBorder() {
 			nvgLineTo(this->context, this->x, this->y + this->height);
 		}
 		nvgClosePath(this->context);
-	}
 	nvgStroke(this->context);
 }
 
-void CDUSelectKeyButton::drawPointers() {
+void MFDSysSelectKeyButton::drawPointers() {
 
 	nvgStrokeWidth(this->context, 1.5f);
-	if(this->event) {
+	if (this->event) {
 		nvgFillColor(this->context, Tools::Colors::white);
-	} else {
+	}
+	else {
 		nvgFillColor(this->context, Tools::Colors::cyan);
 	}
 	nvgStrokeColor(this->context, Tools::Colors::black);
 
 	nvgBeginPath(this->context);
 	{
-		if(this->rightSide) {
-			nvgRoundedRect(this->context, this->x - 16 - 5, this->y + (this->height / 2) - 2, 16, 4, 2.0f);
-		} else {
-			nvgRoundedRect(this->context, this->x + this->width + 5, this->y + (this->height / 2) - 2, 16, 4, 2.0f);
-		}
+		nvgRoundedRect(this->context, this->x - 16 - 5, this->y + (this->height / 2) - 2, 16, 4, 2.0f);
 	}
 	nvgClosePath(this->context);
 	nvgFill(this->context);

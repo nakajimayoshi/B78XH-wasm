@@ -24,6 +24,7 @@
 #include "Drawable.h"
 #include "Tools.h"
 
+
 class CDUButton: public Drawable {
 	public:
 		CDUButton(NVGcontext*& context,
@@ -46,10 +47,13 @@ class CDUButton: public Drawable {
 		}
 
 		std::function<void()> event;
-		
+		void setBackgroundColor(NVGcolor color);
 		void draw() override;
 	protected:
 		NVGcontext*& context;
+		NVGcolor inopBackgroundColor = Tools::Colors::black;
+		NVGcolor backgroundColor = Tools::Colors::cduButtonGray;
+		NVGalign titleAlign = NVG_ALIGN_CENTER;
 		CDUMouseMoveResolver& mouseMoveResolver;
 		CDUMouseClickResolver& mouseClickResolver;
 		double x;
@@ -60,12 +64,14 @@ class CDUButton: public Drawable {
 		char* title;
 		char* title2;
 		float bounds[4] = {0, 0, 0, 0};
+		bool isSelected = false;
+		
 
-		void drawTitle();
+		void drawTitle(NVGcolor color = Tools::Colors::white);
 		void drawButtonBorders();
 		void drawBackBorders(NVGcolor color = Tools::Colors::black);
 		void drawBackground() const;
-		bool isInFocus();
+		bool isInFocus();;
 		void shouldTriggerEvent();
 		virtual void calculateBounds();
 };
