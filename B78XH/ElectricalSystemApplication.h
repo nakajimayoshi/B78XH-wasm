@@ -14,37 +14,12 @@
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#pragma once
 
-#include "CCS.h"
-#include "LVars.h"
-#include "Tools/Console.h"
-#include "KEvents.h"
-#include "B78XBattery.h"
+#include "Battery.h"
 
-
-auto CCS::init() -> void {
-}
-
-auto CCS::prepare() -> void {
-	this->updateLVars();
-}
-
-auto CCS::update(double deltaTime) -> void {
-	this->updateERS(deltaTime);
-	B78XBattery& battery;
-	battery.print();
-
-}
-
-auto CCS::reset() -> void {
-}
-
-auto CCS::updateLVars() -> void {
-	LVars::update();
-}
-
-auto CCS::updateERS(double deltaTime) -> void {
-	this->ers.setLeftIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_L_SWITCH_STATE).isValue());
-	this->ers.setRightIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_R_SWITCH_STATE).isValue());
-	this->ers.update(deltaTime);
-}
+class ElectricSystemApplication {
+	public:
+		Battery battery;
+		void print();
+};

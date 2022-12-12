@@ -15,36 +15,33 @@
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-#include "CCS.h"
-#include "LVars.h"
-#include "Tools/Console.h"
-#include "KEvents.h"
-#include "B78XBattery.h"
+#include "BatteryRepository.h"
 
+using namespace units::voltage;
+using namespace units::current;
+using namespace units::power;
 
-auto CCS::init() -> void {
+auto BatteryRepository::isDischarging() -> bool {
+    return false;
 }
 
-auto CCS::prepare() -> void {
-	this->updateLVars();
+auto BatteryRepository::getCapacity() -> double {
+    return 0.;
 }
 
-auto CCS::update(double deltaTime) -> void {
-	this->updateERS(deltaTime);
-	B78XBattery& battery;
-	battery.print();
-
+auto BatteryRepository::getCurrent() -> units::current::ampere_t {
+    return static_cast<ampere_t>(0.);
 }
 
-auto CCS::reset() -> void {
+auto BatteryRepository::getOutputPotential() -> units::voltage::volt_t {
+    return static_cast<volt_t>(0.);
 }
 
-auto CCS::updateLVars() -> void {
-	LVars::update();
+auto BatteryRepository::getInputPotential() -> units::voltage::volt_t {
+    return static_cast<volt_t>(0.);
 }
 
-auto CCS::updateERS(double deltaTime) -> void {
-	this->ers.setLeftIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_L_SWITCH_STATE).isValue());
-	this->ers.setRightIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_R_SWITCH_STATE).isValue());
-	this->ers.update(deltaTime);
-}
+auto BatteryRepository::getPower() -> units::power::watt_t {
+    return static_cast<watt_t>(getCurrent() * getOutputPotential());
+};
+

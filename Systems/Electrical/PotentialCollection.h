@@ -15,36 +15,19 @@
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-#include "CCS.h"
-#include "LVars.h"
-#include "Tools/Console.h"
-#include "KEvents.h"
-#include "B78XBattery.h"
+#include <unordered_map>
+#include "Potential.h"
+#include "../../Libraries/units.h"
 
+class PotentialCollection {
+    protected:
+        // placeholder classes
+        struct ElectricalElementIdentifier {};
+        struct Power {};
+        struct PotentialOrigin {};
 
-auto CCS::init() -> void {
-}
+        // Potential in this map needs to implement shared ptr like Rc<RefCell<Potential>>
+        std::unordered_map<ElectricalElementIdentifier, Potential> items;
+        std::unordered_map<PotentialOrigin, units::power::watt_t> consumption_per_origin;
 
-auto CCS::prepare() -> void {
-	this->updateLVars();
-}
-
-auto CCS::update(double deltaTime) -> void {
-	this->updateERS(deltaTime);
-	B78XBattery& battery;
-	battery.print();
-
-}
-
-auto CCS::reset() -> void {
-}
-
-auto CCS::updateLVars() -> void {
-	LVars::update();
-}
-
-auto CCS::updateERS(double deltaTime) -> void {
-	this->ers.setLeftIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_L_SWITCH_STATE).isValue());
-	this->ers.setRightIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_R_SWITCH_STATE).isValue());
-	this->ers.update(deltaTime);
-}
+};

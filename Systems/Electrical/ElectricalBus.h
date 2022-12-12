@@ -15,36 +15,18 @@
 //    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-#include "CCS.h"
-#include "LVars.h"
-#include "Tools/Console.h"
-#include "KEvents.h"
-#include "B78XBattery.h"
+#include "units.h"
 
+class ElectricalBus {
+public:
+    // placeholder classes
+    struct ElectricalElementIdentifier {};
+    struct VariableIdentifier {};
+    struct ElectricalBusType {};
 
-auto CCS::init() -> void {
-}
-
-auto CCS::prepare() -> void {
-	this->updateLVars();
-}
-
-auto CCS::update(double deltaTime) -> void {
-	this->updateERS(deltaTime);
-	B78XBattery& battery;
-	battery.print();
-
-}
-
-auto CCS::reset() -> void {
-}
-
-auto CCS::updateLVars() -> void {
-	LVars::update();
-}
-
-auto CCS::updateERS(double deltaTime) -> void {
-	this->ers.setLeftIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_L_SWITCH_STATE).isValue());
-	this->ers.setRightIRSSwitchPosition(LVars::get(LVars::B78XH_IRS_R_SWITCH_STATE).isValue());
-	this->ers.update(deltaTime);
-}
+    ElectricalElementIdentifier identifier;
+    VariableIdentifier bus_powered_id;
+    VariableIdentifier bus_potential_normal_id;
+    units::voltage::volt_t potential;
+    ElectricalBusType bus_type;
+};

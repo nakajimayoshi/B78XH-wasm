@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Electrical">
+      <UniqueIdentifier>{11346ded-5f1f-4c0b-8aaf-dd51896f0e16}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\experimental-systems-main\experimental-systems-main\Systems\Electrical\BatteryRepository.h">
+      <Filter>Electrical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\experimental-systems-main\experimental-systems-main\Systems\Electrical\ElectricalBus.h">
+      <Filter>Electrical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\experimental-systems-main\experimental-systems-main\Systems\Electrical\Electricity.h">
+      <Filter>Electrical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\experimental-systems-main\experimental-systems-main\Systems\Electrical\Potential.h">
+      <Filter>Electrical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\experimental-systems-main\experimental-systems-main\Systems\Electrical\PotentialCollection.h">
+      <Filter>Electrical</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Downloads\experimental-systems-main\experimental-systems-main\Systems\Electrical\BatteryRepository.cpp">
+      <Filter>Electrical</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
