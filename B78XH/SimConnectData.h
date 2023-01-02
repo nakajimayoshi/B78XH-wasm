@@ -412,11 +412,11 @@ namespace SimConnectData {
 
 			inline MainBattery main_battery;
 
-			struct APUBattery {
-				double battery_voltage;
-			};
-
-			inline APUBattery apu_battery;
+			// struct APUBattery {
+			// 	double battery_voltage;
+			// };
+			//
+			// inline APUBattery apu_battery;
 		}
 	}
 }

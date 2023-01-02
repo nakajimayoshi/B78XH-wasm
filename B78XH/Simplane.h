@@ -1433,6 +1433,6 @@ inline auto Simplane::systems::electrical::battery::main_battery::getPotential()
 	return SimConnectData::Systems::electrical::battery::main_battery.battery_voltage;
 }
 
-inline auto Simplane::systems::electrical::battery::apu_battery::getPotential() -> double {
-	return SimConnectData::Systems::electrical::battery::apu_battery.battery_voltage;
-}
+// inline auto Simplane::systems::electrical::battery::apu_battery::getPotential() -> double {
+// 	return SimConnectData::Systems::electrical::battery::apu_battery.battery_voltage;
+// }

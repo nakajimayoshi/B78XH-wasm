@@ -619,8 +619,8 @@ auto SimConnectConnector::prepareDataDefinitions() -> void {
 
 
 
-	this->connectionResult = SimConnect_AddToDataDefinition(simConnectHandle, DEFINITION_APU_BATTERY, "ELECTRICAL BATTERY VOLTAGE:2",
-		"Volts");
+	// this->connectionResult = SimConnect_AddToDataDefinition(simConnectHandle, DEFINITION_APU_BATTERY, "ELECTRICAL BATTERY VOLTAGE:2",
+	// 	"Volts");
 
 }
 
@@ -736,10 +736,10 @@ auto SimConnectConnector::prepareRequests() -> void {
 		SIMCONNECT_PERIOD_SIM_FRAME,
 		SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
 
-	this->connectionResult = SimConnect_RequestDataOnSimObject(simConnectHandle, REQUEST_APU_BATTERY,
-		DEFINITION_APU_BATTERY, SIMCONNECT_OBJECT_ID_USER,
-		SIMCONNECT_PERIOD_SIM_FRAME,
-		SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
+	// this->connectionResult = SimConnect_RequestDataOnSimObject(simConnectHandle, REQUEST_APU_BATTERY,
+	// 	DEFINITION_APU_BATTERY, SIMCONNECT_OBJECT_ID_USER,
+	// 	SIMCONNECT_PERIOD_SIM_FRAME,
+	// 	SIMCONNECT_DATA_REQUEST_FLAG_CHANGED);
 }
 
 
@@ -885,10 +885,10 @@ auto SimConnectConnector::processDispatchMessage(SIMCONNECT_RECV* pData, DWORD* 
 			break;
 		}
 
-		case REQUEST_APU_BATTERY: {
-			SimConnectData::Systems::electrical::battery::apu_battery = (*reinterpret_cast<SimConnectData::Systems::electrical::battery::APUBattery*>(&pObjData->dwData));
-			break;
-		}
+		// case REQUEST_APU_BATTERY: {
+		// 	SimConnectData::Systems::electrical::battery::apu_battery = (*reinterpret_cast<SimConnectData::Systems::electrical::battery::APUBattery*>(&pObjData->dwData));
+		// 	break;
+		// }
 
 		default:
 			break;

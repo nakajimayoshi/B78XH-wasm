@@ -51,7 +51,8 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.wasm</TargetExt>
     <IncludePath>$(MSFS_IncludePath)</IncludePath>
-    <ExternalIncludePath>$(ProjectDir)..\Systems;C:\Users\dev\source\repos\include;$(ExternalIncludePath)</ExternalIncludePath>
+	  <OutDir>G:\MSFS\Community\B78XH-experimental\SimObjects\Airplanes\Asobo_B787_10\panel</OutDir>
+	  <ExternalIncludePath>$(ProjectDir)..\Systems;C:\Users\dev\source\repos\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>$(ProjectDir)..\Systems;C:\Users\dev\source\repos\include;$(LibraryPath)</LibraryPath>
     <OutDir>G:\MSFS\Community\B78XH-experimental\SimObjects\Airplanes\Asobo_B787_10\panel</OutDir>
     <ReferencePath>$(ProjectDir)..\Systems;$(ProjectDir)..\NanoVG;$(ReferencePath)</ReferencePath>
