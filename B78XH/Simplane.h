@@ -619,14 +619,6 @@ inline auto Simplane::autopilot::flightDirector::isFlightDirectorActive() -> boo
 	return static_cast<bool>(Autopilot::flightDirector.isFlightDirectorActive);
 }
 
-inline auto Simplane::autopilot::flightDirector::isFlightDirector1Active() -> bool {
-	return static_cast<bool>(Autopilot::flightDirector.isFlightDirector1Active);
-}
-
-inline auto Simplane::autopilot::flightDirector::isFlightDirector2Active() -> bool {
-	return static_cast<bool>(Autopilot::flightDirector.isFlightDirector2Active);
-}
-
 inline auto Simplane::autopilot::flightDirector::bank() -> double {
 	return Autopilot::flightDirector.bank;
 }
@@ -1437,8 +1429,10 @@ inline auto Simplane::equipment::radioNav::unit4::ident() -> char* {
 	return SimConnectData::Equipment::RadioNav::unit4.ident;
 }
 
-
 inline auto Simplane::systems::electrical::battery::main_battery::getPotential() -> double {
-	return SimConnectData::Systems::electrical::battery.battery_voltage;
+	return SimConnectData::Systems::electrical::battery::main_battery.battery_voltage;
 }
 
+inline auto Simplane::systems::electrical::battery::apu_battery::getPotential() -> double {
+	return SimConnectData::Systems::electrical::battery::apu_battery.battery_voltage;
+}

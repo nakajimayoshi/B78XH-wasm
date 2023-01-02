@@ -19,12 +19,16 @@
 
 #include "Simplane.h"
 #include "Tools/Tools.h"
+#include "Tools/Console.h"
 
 using Colors = Tools::Colors;
 
 void PFDFlightDirectorApplication::render(sGaugeDrawData* data) {
-	this->drawHeading(data->dt);
-	this->drawPitch(data->dt);
+		Console::log("Flight Director: {}", Simplane::autopilot::flightDirector::isFlightDirector1Active());
+		this->drawHeading(data->dt);
+		this->drawPitch(data->dt);
+
+
 }
 
 void PFDFlightDirectorApplication::drawHeading(double deltaTime) {
@@ -50,10 +54,10 @@ void PFDFlightDirectorApplication::drawHeading(double deltaTime) {
 		}
 	}
 	nvgRestore(this->nvgContext);
-
 }
 
 void PFDFlightDirectorApplication::drawPitch(double deltaTime) {
+
 	const double pitch = Simplane::aircraft::state::pitch();
 	const double altitudeAboveGround = Simplane::aircraft::state::altitudeAboveGround();
 	const double flightDirectorPitch = (altitudeAboveGround > 0 && altitudeAboveGround < 10 ? -8 : Simplane::autopilot::flightDirector::pitch());
@@ -79,5 +83,5 @@ void PFDFlightDirectorApplication::drawPitch(double deltaTime) {
 		nvgResetTransform(this->nvgContext);
 	}
 	nvgRestore(this->nvgContext);
-}
 
+}

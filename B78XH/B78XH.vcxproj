@@ -51,9 +51,10 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.wasm</TargetExt>
     <IncludePath>$(MSFS_IncludePath)</IncludePath>
-    <OutDir>..\..\..\..\AppData\Roaming\Microsoft Flight Simulator\Packages\Community\B78XH-experimental\SimObjects\Airplanes\Asobo_B787_10\panel</OutDir>
     <ExternalIncludePath>$(ProjectDir)..\Systems;C:\Users\dev\source\repos\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>$(ProjectDir)..\Systems;C:\Users\dev\source\repos\include;$(LibraryPath)</LibraryPath>
+    <OutDir>G:\MSFS\Community\B78XH-experimental\SimObjects\Airplanes\Asobo_B787_10\panel</OutDir>
+    <ReferencePath>$(ProjectDir)..\Systems;$(ProjectDir)..\NanoVG;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|MSFS'">
     <LinkIncremental>false</LinkIncremental>
@@ -120,6 +121,7 @@
   <ItemGroup>
     <ClCompile Include="AHRU.cpp" />
     <ClCompile Include="Alignable.cpp" />
+    <ClCompile Include="APUBattery.cpp" />
     <ClCompile Include="B78XHConfiguration.cpp" />
     <ClCompile Include="BaseControl.cpp" />
     <ClCompile Include="CCS.cpp" />
@@ -280,6 +282,7 @@
     <ClInclude Include="Alignable.h" />
     <ClInclude Include="AltitudeRestrictionType.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="APUBattery.h" />
     <ClInclude Include="B78XHConfiguration.h" />
     <ClInclude Include="BaseControl.h" />
     <ClInclude Include="BaseGauge.h" />
@@ -465,6 +468,9 @@
     <None Include="B78XH.licenseheader" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NanoVG\NanoVG.vcxproj">
+      <Project>{9c025d65-9fd3-4c33-8bb4-82387922c9d3}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\NanoVG\NanoVG.vcxproj">
       <Project>{9c025d65-9fd3-4c33-8bb4-82387922c9d3}</Project>
     </ProjectReference>

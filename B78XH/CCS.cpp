@@ -32,8 +32,10 @@ auto CCS::prepare() -> void {
 
 auto CCS::update(double deltaTime) -> void {
 	this->updateERS(deltaTime);
-	auto voltage = Simplane::systems::electrical::battery::main_battery::getPotential();
-	Console::log("Remaining Potential: {}", voltage);
+	auto main_voltage = Simplane::systems::electrical::battery::main_battery::getPotential();
+	auto apu_voltage = Simplane::systems::electrical::battery::apu_battery::getPotential();
+	Console::log("Main Battery: {}", main_voltage);
+	Console::log("APU Battery: {}", apu_voltage);
 }
 
 auto CCS::reset() -> void {
