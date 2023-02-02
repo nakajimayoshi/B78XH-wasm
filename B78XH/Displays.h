@@ -29,6 +29,9 @@
 #include "TcpCenterDisplay.h"
 #include "TcpRightDisplay.h"
 #include "TCPMasterControl.h"
+#include "McpIASMasterControl.h"
+#include "McpAltitudeMasterControl.h"
+#include "McpHeadingMasterControl.h"
 
 namespace Displays {
 	inline LeftOutboardDisplay leftOutboardDisplay;
@@ -51,5 +54,8 @@ namespace Displays {
 	//inline std::unique_ptr<MasterControl> masterControl = std::make_unique<MasterControl>("HAHA");
 
 	inline std::unique_ptr<MasterControl> masterControl = std::make_unique<TCPMasterControl>("TCPMasterControl");
+	inline std::unique_ptr<MasterControl> mcpIASControl = std::make_unique<McpIASMasterControl>("McpIASMasterControl");
+	inline std::unique_ptr<MasterControl> mcpAltitudeControl = std::make_unique<McpAltitudeMasterControl>("McpAltitudeMasterControl");
+	inline std::unique_ptr<MasterControl> mcpHeadingControl = std::make_unique<McpHeadingMasterControl>("McpHeadingMasterControl");
 
 }

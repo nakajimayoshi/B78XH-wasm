@@ -75,4 +75,5 @@ namespace Tools {
 
 	auto smoothPow(double start, double end, double factor, double deltaTime) -> double;
 	auto clamp(double value, double lo, double hi) -> double;
+	auto formatToFixed(double data, int digits) -> std::string;
 }

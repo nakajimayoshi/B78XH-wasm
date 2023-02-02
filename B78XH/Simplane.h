@@ -200,6 +200,7 @@ namespace Simplane {
 			auto machHoldVar1() -> double;
 			auto machHoldVar2() -> double;
 			auto machHoldVar3() -> double;
+			auto managedMach() -> bool;
 		}
 
 		namespace heading {
@@ -1406,4 +1407,8 @@ inline auto Simplane::equipment::radioNav::unit4::name() -> char* {
 
 inline auto Simplane::equipment::radioNav::unit4::ident() -> char* {
 	return SimConnectData::Equipment::RadioNav::unit4.ident;
+}
+
+inline auto Simplane::autopilot::airspeed::managedMach() -> bool {
+	return static_cast<bool>(SimConnectData::Autopilot::airspeed.isInMachMode);
 }

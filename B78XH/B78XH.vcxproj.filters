@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="MCPAltitudeGaugeCallback.cpp">
-      <Filter>Source Files\MSFS Callbacks</Filter>
-    </ClCompile>
-    <ClCompile Include="MCPVSpeedGaugeCallback.cpp">
+    <ClCompile Include="McpAltitudeControlCallback.cpp">
       <Filter>Source Files\MSFS Callbacks</Filter>
     </ClCompile>
     <ClCompile Include="MCPAltitudeGauge.cpp">
@@ -379,16 +376,13 @@
     <ClCompile Include="RightOutboardDisplayGaugeCallback.cpp">
       <Filter>Source Files\MSFS Callbacks</Filter>
     </ClCompile>
-    <ClCompile Include="McpSpeedDisplayGaugeCallback.cpp">
+    <ClCompile Include="McpIASControlCallback.cpp">
       <Filter>Source Files\MSFS Callbacks</Filter>
     </ClCompile>
-    <ClCompile Include="McpVerticalSpeedDisplayGaugeCallback.cpp">
+    <ClCompile Include="McpVerticalSpeedControlCallback.cpp">
       <Filter>Source Files\MSFS Callbacks</Filter>
     </ClCompile>
-    <ClCompile Include="McpAltitudeDisplayGaugeCallback.cpp">
-      <Filter>Source Files\MSFS Callbacks</Filter>
-    </ClCompile>
-    <ClCompile Include="McpHeadingDisplayGaugeCallback.cpp">
+    <ClCompile Include="McpHeadingControlCallback.cpp">
       <Filter>Source Files\MSFS Callbacks</Filter>
     </ClCompile>
     <ClCompile Include="TcpRightDisplay.cpp">
@@ -504,6 +498,24 @@
     </ClCompile>
     <ClCompile Include="SimConnectFacility.cpp">
       <Filter>Source Files\Tools\SimConnectFacility</Filter>
+    </ClCompile>
+    <ClCompile Include="McpIASMasterControl.cpp">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClCompile>
+    <ClCompile Include="McpIASControl.cpp">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClCompile>
+    <ClCompile Include="McpAltitudeMasterControl.cpp">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClCompile>
+    <ClCompile Include="McpAltitudeControl.cpp">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClCompile>
+    <ClCompile Include="McpHeadingMasterControl.cpp">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClCompile>
+    <ClCompile Include="McpHeadingControl.cpp">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1110,6 +1122,24 @@
     <ClInclude Include="SimConnectFacility.h">
       <Filter>Source Files\Tools\SimConnectFacility</Filter>
     </ClInclude>
+    <ClInclude Include="McpIASMasterControl.h">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClInclude>
+    <ClInclude Include="McpIASControl.h">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClInclude>
+    <ClInclude Include="McpAltitudeMasterControl.h">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClInclude>
+    <ClInclude Include="McpAltitudeControl.h">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClInclude>
+    <ClInclude Include="McpHeadingMasterControl.h">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClInclude>
+    <ClInclude Include="McpHeadingControl.h">
+      <Filter>Source Files\Controls\Controls\MCP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -1402,6 +1432,9 @@
     </Filter>
     <Filter Include="Source Files\Tools\SimConnectFacility">
       <UniqueIdentifier>{e0245576-9e7b-4b9f-a57f-80d2981f9c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controls\Controls\MCP">
+      <UniqueIdentifier>{b9748da6-a45e-4e5f-a196-181138a2bfcc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

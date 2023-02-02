@@ -51,7 +51,7 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.wasm</TargetExt>
     <IncludePath>$(MSFS_IncludePath);$(CPP_EXTERNALS)\include\NANOVG;</IncludePath>
-    <OutDir>..\..\..\..\WebstormProjects\B78XH-INTERIOR\SimObjects\Airplanes\Asobo_B787_10\panel</OutDir>
+    <OutDir>..\..\..\..\Desktop\msfs_addons\Aircraft\787-10_Heavy_Division\B78XH-experimental\SimObjects\Airplanes\Asobo_B787_10\panel</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|MSFS'">
     <LinkIncremental>false</LinkIncremental>
@@ -179,16 +179,21 @@
     <ClCompile Include="LVars.cpp" />
     <ClCompile Include="MasterControl.cpp" />
     <ClCompile Include="MCPAltitudeApplication.cpp" />
+    <ClCompile Include="McpAltitudeControl.cpp" />
     <ClCompile Include="McpAltitudeDisplay.cpp" />
-    <ClCompile Include="McpAltitudeDisplayGaugeCallback.cpp" />
+    <ClCompile Include="McpAltitudeMasterControl.cpp" />
     <ClCompile Include="MCPHeadingApplication.cpp" />
+    <ClCompile Include="McpHeadingControl.cpp" />
     <ClCompile Include="McpHeadingDisplay.cpp" />
-    <ClCompile Include="McpHeadingDisplayGaugeCallback.cpp" />
+    <ClCompile Include="McpHeadingControlCallback.cpp" />
+    <ClCompile Include="McpHeadingMasterControl.cpp" />
+    <ClCompile Include="McpIASControl.cpp" />
+    <ClCompile Include="McpIASMasterControl.cpp" />
     <ClCompile Include="McpSpeedDisplay.cpp" />
-    <ClCompile Include="McpSpeedDisplayGaugeCallback.cpp" />
+    <ClCompile Include="McpIASControlCallback.cpp" />
     <ClCompile Include="MCPVerticalSpeedApplication.cpp" />
     <ClCompile Include="McpVerticalSpeedDisplay.cpp" />
-    <ClCompile Include="McpVerticalSpeedDisplayGaugeCallback.cpp" />
+    <ClCompile Include="McpVerticalSpeedControlCallback.cpp" />
     <ClCompile Include="MCPVSpeedGauge.cpp" />
     <ClCompile Include="MFDCduGauge.cpp" />
     <ClCompile Include="MFDCduGaugeCallback.cpp" />
@@ -207,8 +212,7 @@
     <ClCompile Include="PFDAuxGaugeCallback.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MCPAltitudeGauge.cpp" />
-    <ClCompile Include="MCPAltitudeGaugeCallback.cpp" />
-    <ClCompile Include="MCPVSpeedGaugeCallback.cpp" />
+    <ClCompile Include="McpAltitudeControlCallback.cpp" />
     <ClCompile Include="PEDESTALTuningControlPanelGaugeCallback.cpp" />
     <ClCompile Include="PFDBaroIndicator.cpp" />
     <ClCompile Include="PFDBaroIndicatorApplication.cpp" />
@@ -375,9 +379,15 @@
     <ClInclude Include="LVars.h" />
     <ClInclude Include="MasterControl.h" />
     <ClInclude Include="MCPAltitudeApplication.h" />
+    <ClInclude Include="McpAltitudeControl.h" />
     <ClInclude Include="McpAltitudeDisplay.h" />
+    <ClInclude Include="McpAltitudeMasterControl.h" />
     <ClInclude Include="MCPHeadingApplication.h" />
+    <ClInclude Include="McpHeadingControl.h" />
     <ClInclude Include="McpHeadingDisplay.h" />
+    <ClInclude Include="McpHeadingMasterControl.h" />
+    <ClInclude Include="McpIASControl.h" />
+    <ClInclude Include="McpIASMasterControl.h" />
     <ClInclude Include="McpSpeedDisplay.h" />
     <ClInclude Include="MCPVerticalSpeedApplication.h" />
     <ClInclude Include="McpVerticalSpeedDisplay.h" />

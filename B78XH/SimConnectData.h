@@ -244,6 +244,7 @@ namespace SimConnectData {
 			double machHoldVar1;
 			double machHoldVar2;
 			double machHoldVar3;
+			double isInMachMode;
 		};
 
 		inline Airspeed airspeed;

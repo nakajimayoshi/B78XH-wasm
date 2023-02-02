@@ -18,6 +18,7 @@
 
 #include <cctype>
 #include <cmath>
+#include <string>
 
 #include "fmt/core.h"
 
@@ -130,4 +131,16 @@ namespace Tools {
 	auto clamp(double value, double lo, double hi) -> double {
 		return std::min<double>(hi, std::max<double>(value, lo));
 	};
+
+	auto formatToFixed(double data, int digits) -> std::string {
+		return fmt::format("{:." + std::to_string(digits) + "f}", data);
+	}
+
+	auto formatToFixed(float data, int digits) -> std::string {
+		return fmt::format("{:." + std::to_string(digits) + "f}", data);
+	}
+
+	auto formatToFixed(int data, int digits) -> std::string {
+		return fmt::format("{:." + std::to_string(digits) + "f}", data);
+	}
 }

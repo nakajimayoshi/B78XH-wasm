@@ -364,6 +364,9 @@ auto SimConnectConnector::prepareDataDefinitions() -> void {
 	this->connectionResult = SimConnect_AddToDataDefinition(simConnectHandle, DEFINITION_AUTOPILOT_AIRSPEED,
 	                                                        "AUTOPILOT MACH HOLD VAR:3", "Number");
 
+	this->connectionResult = SimConnect_AddToDataDefinition(simConnectHandle, DEFINITION_AUTOPILOT_AIRSPEED,
+	                                                        "AUTOPILOT MANAGED SPEED IN MACH", "Bool");
+
 	/*
 	 * Autopilot - Heading
 	 */
