@@ -33,7 +33,7 @@ bool MCPAltitudeGauge::postInstall(FsContext context) {
 	params.userPtr = context;
 	params.edgeAntiAlias = true;
 	this->nvgContext = nvgCreateInternal(&params);
-	this->altitudeFont = nvgCreateFont(this->nvgContext, "dseg7", "./data/DSEG7ClassicMini-Italic.ttf");
+	this->altitudeFont = nvgCreateFont(this->nvgContext, "mcp", "./data/787MCP.ttf");
 	return true;
 }
 
@@ -58,7 +58,7 @@ bool MCPAltitudeGauge::preDraw(sGaugeDrawData* data) {
 		nvgRect(this->nvgContext, 0, 0, winWidth, winHeight);
 		nvgFill(this->nvgContext);
 		nvgFontSize(this->nvgContext, 90.0f);
-		nvgFontFace(this->nvgContext, "dseg7");
+		nvgFontFace(this->nvgContext, "mcp");
 		nvgFillColor(this->nvgContext, Colors::white);
 
 		nvgTextAlign(this->nvgContext, NVG_ALIGN_RIGHT | NVG_ALIGN_TOP);

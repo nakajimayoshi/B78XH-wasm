@@ -33,8 +33,8 @@ auto MCPAltitudeApplication::render(sGaugeDrawData* data) -> void {
 	const FLOAT64 fAltitude = SimConnectData::Autopilot::altitude.altitudeLockVar3;
 	const std::string sAltitude = std::to_string(static_cast<int>(fAltitude));
 
-	nvgFontSize(this->nvgContext, 90.0f);
-	nvgFontFace(this->nvgContext, "dseg7");
+	nvgFontSize(this->nvgContext, 130.0f);
+	nvgFontFace(this->nvgContext, "mcp");
 	nvgTextAlign(this->nvgContext, NVG_ALIGN_RIGHT | NVG_ALIGN_TOP);
 	nvgFillColor(this->nvgContext, Colors::white);
 

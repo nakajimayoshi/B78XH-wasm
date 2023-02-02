@@ -34,8 +34,8 @@ bool MCPVSpeedGauge::postInstall(FsContext context) {
 	params.edgeAntiAlias = true;
 	this->nvgContext = nvgCreateInternal(&params);
 
-	this->verticalSpeedFont = nvgCreateFont(this->nvgContext, "dseg", "./data/DSEG7ClassicMini-Italic.ttf");
-	this->typeFont = nvgCreateFont(this->nvgContext, "roboto", "./data/Roboto-Regular.ttf");
+	this->verticalSpeedFont = nvgCreateFont(this->nvgContext, "mcp", "./data/787MCP.ttf");
+	this->typeFont = nvgCreateFont(this->nvgContext, "jost", "./data/Jost-Medium");
 	return true;
 }
 
@@ -83,14 +83,14 @@ bool MCPVSpeedGauge::preDraw(sGaugeDrawData* data) {
 		nvgFill(this->nvgContext);
 		if (fVSpeedActive != 0) {
 			nvgFontSize(this->nvgContext, 80.0f);
-			nvgFontFace(this->nvgContext, "roboto");
+			nvgFontFace(this->nvgContext, "jost");
 			nvgFillColor(this->nvgContext, Colors::white);
 
 			nvgTextAlign(this->nvgContext, NVG_ALIGN_LEFT | NVG_ALIGN_TOP);
 			nvgText(this->nvgContext, 12, -10, sVSpeedMode.c_str(), nullptr);
 
 			nvgFontSize(this->nvgContext, 85.0f);
-			nvgFontFace(this->nvgContext, "dseg");
+			nvgFontFace(this->nvgContext, "mcp");
 			nvgFillColor(this->nvgContext, Colors::white);
 
 			nvgTextAlign(this->nvgContext, NVG_ALIGN_RIGHT | NVG_ALIGN_TOP);

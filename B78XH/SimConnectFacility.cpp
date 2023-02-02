@@ -109,23 +109,23 @@ auto SimConnectFacility::processDispatchMessage(SIMCONNECT_RECV* pData, DWORD* c
 					auto airport = reinterpret_cast<AirportStruct*>(&pFacilityData->Data);
 					//const std::string a = airport->name;
 					//const Airport b = Airport(airport->name, airport->latitude, airport->longitude, airport->altitude);
-					Console::error("{}", airport->name);
-					Console::error("Number Of Runways {}", airport->numberOfRunways);
+					// Console::error("{}", airport->name);
+					// Console::error("Number Of Runways {}", airport->numberOfRunways);
 					airportsCache.emplace(airport->name, Airport(airport->name, airport->latitude, airport->longitude, airport->altitude));
 					break;
 				}
 
 				case SIMCONNECT_FACILITY_DATA_RUNWAY: {
 					auto runway = reinterpret_cast<RunwayStruct*>(&pFacilityData->Data);
-					Console::error("RUNWAY PRIMARY NUMBER: {}", runway->primaryNumber);
-					Console::error("RUNWAY SECONDARY NUMBER: {}", runway->secondaryNumber);
+					// Console::error("RUNWAY PRIMARY NUMBER: {}", runway->primaryNumber);
+					// Console::error("RUNWAY SECONDARY NUMBER: {}", runway->secondaryNumber);
 					break;
 				}
 
 				case SIMCONNECT_FACILITY_DATA_WAYPOINT: {
 					auto waypoint = reinterpret_cast<WaypointStruct*>(&pFacilityData->Data);
-					Console::error("WAYPOINT ICAO: {}", waypoint->icao);
-					Console::error("NUMBER OF ROUTES: {}", waypoint->numberOFRoutes);
+					// Console::error("WAYPOINT ICAO: {}", waypoint->icao);
+					// Console::error("NUMBER OF ROUTES: {}", waypoint->numberOFRoutes);
 
 					waypointsCache.emplace(waypoint->icao, waypoint->icao);
 					
@@ -134,11 +134,11 @@ auto SimConnectFacility::processDispatchMessage(SIMCONNECT_RECV* pData, DWORD* c
 
 				case SIMCONNECT_FACILITY_DATA_ROUTE: {
 					auto route = reinterpret_cast<RouteStruct*>(&pFacilityData->Data);
-					Console::error("ROUTE NAME: {}", route->name);
-					Console::error("PREV ICAO: {}", route->previousIcao);
-					Console::error("PREV REGION: {}", route->previousRegion);
-					Console::error("NEXT ICAO: {}", route->nextIcao);
-					Console::error("NEXT REGION: {}", route->nextRegion);
+					// Console::error("ROUTE NAME: {}", route->name);
+					// Console::error("PREV ICAO: {}", route->previousIcao);
+					// Console::error("PREV REGION: {}", route->previousRegion);
+					// Console::error("NEXT ICAO: {}", route->nextIcao);
+					// Console::error("NEXT REGION: {}", route->nextRegion);
 
 					if(route->previousIcao != "") {
 						waypointsRequests.emplace(route->previousIcao, route->previousRegion);
@@ -161,7 +161,7 @@ auto SimConnectFacility::processDispatchMessage(SIMCONNECT_RECV* pData, DWORD* c
 				waypointsRequests.erase(waypoint.first);
 				this->connectionResult = SimConnect_RequestFacilityData_EX1(getHandle(), WAYPOINT, START, icao, region);
 			}
-			Console::info("B78XH WASM: Facility data end...");
+			// Console::info("B78XH WASM: Facility data end...");
 		}
 		break;
 

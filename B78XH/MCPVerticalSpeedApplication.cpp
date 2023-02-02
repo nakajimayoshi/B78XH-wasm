@@ -54,8 +54,8 @@ auto MCPVerticalSpeedApplication::render(sGaugeDrawData* data) -> void {
 }
 
 auto MCPVerticalSpeedApplication::renderMode() -> void {
-	nvgFontSize(this->nvgContext, 80.0f);
-	nvgFontFace(this->nvgContext, "roboto");
+	nvgFontSize(this->nvgContext, 90.0f);
+	nvgFontFace(this->nvgContext, "jost");
 	nvgFillColor(this->nvgContext, Colors::white);
 	nvgTextAlign(this->nvgContext, NVG_ALIGN_LEFT | NVG_ALIGN_TOP);
 
@@ -67,8 +67,8 @@ auto MCPVerticalSpeedApplication::renderMode() -> void {
 
 auto MCPVerticalSpeedApplication::renderValue() -> void {
 	const int verticalSpeedValue = static_cast<int>(SimConnectData::Autopilot::verticalSpeed.verticalSpeedHoldVar1);
-	nvgFontSize(this->nvgContext, 85.0f);
-	nvgFontFace(this->nvgContext, "dseg7");
+	nvgFontSize(this->nvgContext, 110.0f);
+	nvgFontFace(this->nvgContext, "mcp");
 	nvgFillColor(this->nvgContext, Colors::white);
 	nvgTextAlign(this->nvgContext, NVG_ALIGN_RIGHT | NVG_ALIGN_TOP);
 

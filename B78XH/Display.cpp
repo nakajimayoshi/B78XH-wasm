@@ -111,6 +111,8 @@ auto Display::setupFonts() -> void {
 	this->addFont(nvgCreateFont(this->nvgContext, "roboto", "./data/Roboto-Regular.ttf"));
 	this->addFont(nvgCreateFont(this->nvgContext, "heavy-fmc", "./data/Heavy787FMC.ttf"));
 	this->addFont(nvgCreateFont(this->nvgContext, "dseg7", "./data/DSEG7ClassicMini-Italic.ttf"));
+	this->addFont(nvgCreateFont(this->nvgContext, "mcp", "./data/787MCP.ttf"));
+	this->addFont(nvgCreateFont(this->nvgContext, "jost", "./data/Jost-Medium.ttf"));
 }
 
 auto Display::preDraw(sGaugeDrawData* data) -> bool {

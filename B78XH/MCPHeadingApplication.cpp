@@ -49,7 +49,7 @@ auto MCPHeadingApplication::render(sGaugeDrawData* data) -> void {
 
 auto MCPHeadingApplication::renderMode() -> void {
 	nvgFontSize(this->nvgContext, 80.0f);
-	nvgFontFace(this->nvgContext, "roboto");
+	nvgFontFace(this->nvgContext, "jost");
 	nvgFillColor(this->nvgContext, Colors::white);
 	nvgTextAlign(this->nvgContext, NVG_ALIGN_LEFT | NVG_ALIGN_TOP);
 
@@ -60,8 +60,8 @@ auto MCPHeadingApplication::renderMode() -> void {
 }
 
 auto MCPHeadingApplication::renderValue() -> void {
-	nvgFontSize(this->nvgContext, 90.0f);
-	nvgFontFace(this->nvgContext, "dseg7");
+	nvgFontSize(this->nvgContext, 130.0f);
+	nvgFontFace(this->nvgContext, "mcp");
 	nvgTextAlign(this->nvgContext, NVG_ALIGN_RIGHT | NVG_ALIGN_TOP);
 	nvgFillColor(this->nvgContext, Colors::white);
 

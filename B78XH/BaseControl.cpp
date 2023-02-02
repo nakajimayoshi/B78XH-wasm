@@ -10,6 +10,8 @@ auto BaseControl::prepareRenderingContextDefaultsFonts() -> void {
 	addFont("roboto", "Roboto-Regular.ttf", FONT_TYPE::DEFAULT, "./data/");
 	addFont("heavy-fmc", "Heavy787FMC.ttf", FONT_TYPE::DEFAULT, "./data/");
 	addFont("dseg7", "DSEG7ClassicMini-Italic.ttf", FONT_TYPE::DEFAULT, "./data/");
+	addFont("jost", "Jost-Medium.ttf", FONT_TYPE::DEFAULT, "./data/");
+	addFont("mcp", "787MCP.ttf", FONT_TYPE::DEFAULT, "./data/");
 }
 
 auto BaseControl::addFont(string alias, string filename, FONT_TYPE type, string path) -> void {
